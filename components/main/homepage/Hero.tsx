@@ -1,6 +1,4 @@
-import WrapContent from '@/components/shared/WrapContent';
 import { colors } from '@/styles/theme';
-import Image from 'next/image';
 import React from 'react';
 import { FaArrowCircleRight } from 'react-icons/fa';
 
@@ -25,7 +23,7 @@ function Hero() {
             <FaArrowCircleRight className='ml-3 text-xl' />
           </button>
         </div>
-        <div className='bg-black h-[38vh] md:h-[40vh] md:w-[80%] lg:w-full pl-10 lg:h-full md:ml-auto  rounded-l-full py-5  flex items-center  justify-start lg:justify-end '>
+        {/* <div className='bg-black h-[38vh] md:h-[40vh] md:w-[80%] lg:w-full pl-10 lg:h-full md:ml-auto  rounded-l-full py-5  flex items-center  justify-start lg:justify-end '>
           <div className='relative w-full sm:w-[50%] lg:w-full h-full'>
             <Image
               className='object-contain w-[90%] h-[90%]'
@@ -34,6 +32,21 @@ function Hero() {
               alt='shop illustration'
             />
           </div>
+        </div> */}
+
+        <div className='flex items-center'>
+          <video
+            width='320'
+            height='240'
+            controls=''
+            className='w-full rounded-l-full'
+            loop
+            autoPlay
+            muted
+          >
+            <source src='/test.mp4' type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
