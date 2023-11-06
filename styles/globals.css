@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth !important;
+  --brand-purple: #a855f8;
+}
+
+body,
+p,
+div,
+span,
+small,
+b,
+i,
+li {
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a,
+b {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif !important;
+}
+
+.raleway {
+  font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif !important;
+}
+
+.poppins {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif !important;
+}
+
+.nunito {
+  font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif !important;
+}
+
+html[data-theme='night'] a {
+  color: aliceblue !important;
+}
+html[data-theme='night'] a:hover {
+  color: var(--brand-purple) !important;
+}
+
+html[data-theme='night'] button:disabled {
+  color: aliceblue !important;
+}
+html[data-theme='night'] input,
+html[data-theme='night'] select {
+  color: aliceblue !important;
+}
+html[data-theme='night'] input:focus,
+html[data-theme='night'] select:focus {
+  color: black !important;
+}
+
+html[data-theme='light'] body {
+  background-color: #f9fafb;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 9999px !important;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: var(--brand-purple);
+}
+button:hover {
+  color: var(--brand-purple);
+}
+
+input[type='radio']:checked.rating-star {
+  background-image: none;
+  background-color: yellow !important;
+}
+
+.hero {
+  background: linear-gradient(
+    176.58deg,
+    #170455 10.14%,
+    #170455 10.15%,
+    rgba(23, 4, 85, 1) 57.39%,
+    #fe8c80 97.18%
+  );
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+.react-simple-star-rating svg {
+  display: inline;
+  width: 20px;
+  height: 20px;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(67, 3, 83);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* general styles for form */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.form-input[aria-invalid='true'] {
+  border-color: #e53e3e;
+}
+.text {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.before-element-style {
+  content: "''";
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  width: 20px;
+  border: 1px solid white;
+}
+
+.after-element-style {
+  content: "''";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  width: 20px;
+  border: 1px solid white;
+}
+
+.no-scrollbar {
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.shop-footer-box:hover > svg,
+.shop-footer-box:hover > small {
+  color: purple;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
