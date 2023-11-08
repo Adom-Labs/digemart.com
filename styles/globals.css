@@ -246,7 +246,7 @@ input[type='radio']:checked.rating-star {
 }
 
 .no-scrollbar {
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: auto;
 }
 
 .no-scrollbar::-webkit-scrollbar {

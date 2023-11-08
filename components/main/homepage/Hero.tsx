@@ -6,9 +6,9 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 
 function Hero() {
   return (
-    <div className='md:h-[80vh] '>
+    <div className='md:min-h-[60vh] flex items-center '>
       <div className='grid grid-cols-1 gap-5 lg:gap-0 lg:grid-cols-2  h-full'>
-        <div className='flex justify-center flex-col p-4 gap-5'>
+        <div className='flex justify-center flex-col px-4 py-10 gap-5'>
           <h1 className='text-5xl md:text-6xl lg:text-7xl pt-10 lg:pt-0 lg:w-[90%] xl:w-[80%]'>
             Webinar software for the modern marketer
           </h1>
@@ -41,7 +41,7 @@ function Hero() {
             width='320'
             height='240'
             controls=''
-            className='w-full rounded-l-full'
+            className='w-full rounded-l-full border-l border-t border-b border-gray-500'
             loop
             autoPlay
             muted
