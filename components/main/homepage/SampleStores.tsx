@@ -55,7 +55,7 @@ function SampleStoreCard() {
         </p>
         <p>short description</p>
       </div>
-      <div className='relative h-[330px] w-[330px]'>
+      <div className='relative h-[310px] w-[310px]'>
         <Image
           src={'/shop/images/f_pants.jpg'}
           alt='sample store'

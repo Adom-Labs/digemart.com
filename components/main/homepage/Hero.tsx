@@ -19,7 +19,7 @@ function Hero() {
             style={{
               background: colors.brand[100],
             }}
-            className='btn btn-lg  text-white sm:self-start px-10 '
+            className='btn btn-lg  text-white sm:self-start px-10'
           >
             Start Selling!
             <FaArrowCircleRight className='ml-3 text-xl' />

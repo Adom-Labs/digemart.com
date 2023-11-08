@@ -46,7 +46,7 @@ export default SampleProducts;
 
 function SampleProductCard({ product }: { product: ProductType }) {
   return (
-    <div className='w-[330px]'>
+    <div className='w-[310px]'>
       <div className='relative min-h-[225px] rounded-xl bg-gray-100'>
         <Image
           fill
