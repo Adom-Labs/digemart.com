@@ -1,4 +1,4 @@
-import VendorShopLayout from '@/app/shopForVendor/layout';
+import VendorShopLayout from '@/components/shop/layout';
 import React from 'react';
 
 function Orders() {
