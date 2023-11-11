@@ -14,12 +14,12 @@ const logoSrc = {
 
 const AppLogo = ({ logoType = 'n', ...rest }: LogoType) => {
   return (
-    <Link href='/'>
+    <Link href='/' className='min-h-[50px]'>
       <Image
         alt='logo'
         src={logoType === 'n' ? logoSrc.n : logoSrc.d}
         width='100'
-        height='100'
+        height='50'
         style={{ objectFit: 'contain' }}
         {...rest}
       />

@@ -7,6 +7,7 @@ import WrapContent from '@/components/shared/WrapContent';
 import AppLogo from '@/components/shared/AppLogo';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import { useTheme } from '@/providers/ThemeProvider';
+import { OpenAgentModal } from '../homepage/CallToAction';
 
 function TopNav() {
   const { theme } = useTheme();
@@ -19,8 +20,14 @@ function TopNav() {
             <div className='hidden md:block'>
               <NavLink title='Start Selling' path='#sell' />
             </div>
-            <div className='hidden md:block'>
-              <NavLink title='Become an Agent' path='/agents' />
+            <div onClick={OpenAgentModal} className='hidden md:block'>
+              <a
+                title='Become an Agent'
+                href='#!'
+                className={linkStyle + 'text-lg md:block'}
+              >
+                Become an Agent
+              </a>
             </div>
             <div className='hidden md:block'>
               <NavLink title='FAQ' path='#FAQ' />

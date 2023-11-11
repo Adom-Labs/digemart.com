@@ -1,42 +1,53 @@
 import WrapContent from '@/components/shared/WrapContent';
 import Image from 'next/image';
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 function SampleStores() {
-  function FORWARD() {
-    const elem = document.querySelector('#slider-shop');
-    elem?.scrollTo(0, elem.scrollWidth + 300);
-  }
-  function BACK() {
-    const elem = document.querySelector('#slider-shop');
-    elem?.scrollTo(0, elem.scrollWidth - 300);
-  }
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -310,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 310,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <div className='pb-10'>
       <WrapContent>
         <h2 className='text-3xl md:text-4xl'>Featured Stores</h2>
-        <div
-          id='slider-shop'
-          className='overflow-auto  no-scrollbar relative group'
-        >
-          <div className='group-hover:flex hidden transition-all duration-300 ease btn btn-circle bg-base-200  hover:text-white hover:bg-success absolute top-[50%] z-10 left-0 shadow-md border-none '>
-            <FaArrowLeft className='text-3xl ' />
-          </div>
-          <div className='group-hover:flex hidden transition-all duration-300 ease btn btn-circle bg-base-200  hover:text-white hover:bg-success absolute top-[50%] z-10 right-0 shadow-md border-none '>
-            <FaArrowRight className='text-3xl ' />
-          </div>
-          <div className='w-fit flex gap-5 min-w-[100vw]  py-5'>
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
-            <SampleStoreCard />
+        <div className='relative'>
+          <div
+            id='slider-shop'
+            ref={scrollRef}
+            className='overflow-auto no-scrollbar  group'
+          >
+            <ScrollerButton dir='left' handler={handleScrollLeft} />
+            <ScrollerButton dir='right' handler={handleScrollRight} />
+
+            <div className='w-fit flex gap-5 min-w-[100vw]   py-5'>
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+              <SampleStoreCard />
+            </div>
           </div>
         </div>
       </WrapContent>
@@ -64,6 +75,29 @@ function SampleStoreCard() {
           className='object-cover rounded-b-xl'
         />
       </div>
+    </div>
+  );
+}
+
+export function ScrollerButton({
+  dir,
+  handler,
+}: {
+  dir: 'left' | 'right';
+  handler: () => void;
+}) {
+  const base =
+    'group-hover:flex hidden  transition-all duration-300 ease btn btn-circle bg-base-200  hover:text-white hover:bg-success absolute top-[50%] z-10  shadow-md border-none';
+  return (
+    <div
+      onClick={handler}
+      className={base + ' ' + (dir === 'left' ? 'left-0' : 'right-0')}
+    >
+      {dir === 'left' ? (
+        <FaArrowLeft className='text-3xl ' />
+      ) : (
+        <FaArrowRight className='text-3xl ' />
+      )}
     </div>
   );
 }

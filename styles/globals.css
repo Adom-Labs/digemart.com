@@ -55,7 +55,7 @@ b {
 }
 
 html[data-theme='night'] a {
-  color: aliceblue !important;
+  color: aliceblue;
 }
 html[data-theme='night'] a:hover {
   color: var(--brand-purple) !important;
@@ -75,6 +75,13 @@ html[data-theme='night'] select:focus {
 
 html[data-theme='light'] body {
   background-color: #f9fafb;
+}
+html[data-theme='night'] .dim-borders {
+  border-color: #1e293b !important;
+}
+
+html[data-theme='night'] .dim-underline {
+  text-decoration-color: #1e293b !important;
 }
 
 body {

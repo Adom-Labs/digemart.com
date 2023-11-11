@@ -24,7 +24,7 @@ function ShopNav() {
       <div className='grid grid-cols-4 items-center  shadow-2xl '>
         <Link
           href={shopUrl + '/'}
-          style={{ color: isSamePath('/') ? 'purple' : 'initial' }}
+          style={{ color: isSamePath('/') ? '#a855f8' : 'initial' }}
           className={linkStyle}
         >
           <CiShop className='text-2xl' />
@@ -32,7 +32,7 @@ function ShopNav() {
         </Link>
         <Link
           style={{
-            color: isSamePath('/products') ? 'purple' : 'initial',
+            color: isSamePath('/products') ? '#a855f8' : 'initial',
           }}
           href={shopUrl + '/products'}
           className={linkStyle}
@@ -42,7 +42,7 @@ function ShopNav() {
         </Link>
         <Link
           style={{
-            color: isSamePath('/orders') ? 'purple' : 'initial',
+            color: isSamePath('/orders') ? '#a855f8' : 'initial',
           }}
           href={shopUrl + '/orders'}
           className={linkStyle}
@@ -52,7 +52,7 @@ function ShopNav() {
         </Link>
         <Link
           style={{
-            color: isSamePath('/profile') ? 'purple' : 'initial',
+            color: isSamePath('/profile') ? '#a855f8' : 'initial',
           }}
           href={shopUrl + '/profile'}
           className={linkStyle}

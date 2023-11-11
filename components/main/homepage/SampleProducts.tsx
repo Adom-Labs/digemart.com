@@ -4,37 +4,48 @@ import generateTestProducts from '@/providers/generateTestData';
 import ProductType from '@/types/ProductType';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import React, { useRef } from 'react';
+import { ScrollerButton } from './SampleStores';
 
 function SampleProducts() {
-  function FORWARD() {
-    const elem = document.querySelector('#slider-shop');
-    elem?.scrollTo(0, elem.scrollWidth + 300);
-  }
-  function BACK() {
-    const elem = document.querySelector('#slider-shop');
-    elem?.scrollTo(0, elem.scrollWidth - 300);
-  }
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -310,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 310,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <div className='pb-10 pt-20'>
       <WrapContent>
         <h2 className='text-3xl md:text-4xl'>Featured Products</h2>
-        <div
-          id='product-shop'
-          className='overflow-auto  no-scrollbar relative group'
-        >
-          <div className='group-hover:flex hidden transition-all duration-300 ease btn btn-circle bg-base-200  hover:text-white hover:bg-success absolute top-[50%] z-10 left-0 shadow-md border-none '>
-            <FaArrowLeft className='text-3xl ' />
-          </div>
-          <div className='group-hover:flex hidden transition-all duration-300 ease btn btn-circle bg-base-200  hover:text-white hover:bg-success absolute top-[50%] z-10 right-0 shadow-md border-none '>
-            <FaArrowRight className='text-3xl ' />
-          </div>
-          <div className='w-fit flex gap-5 min-w-[100vw]  py-5'>
-            {generateTestProducts().map((product) => {
-              return <SampleProductCard key={product.id} product={product} />;
-            })}
+        <div className='relative'>
+          <div
+            ref={scrollRef}
+            id='product-shop'
+            className='overflow-auto  no-scrollbar group'
+          >
+            <ScrollerButton dir='left' handler={handleScrollLeft} />
+            <ScrollerButton dir='right' handler={handleScrollRight} />
+
+            <div className='w-fit flex gap-5 min-w-[100vw]  py-5'>
+              {generateTestProducts().map((product) => {
+                return <SampleProductCard key={product.id} product={product} />;
+              })}
+            </div>
           </div>
         </div>
       </WrapContent>

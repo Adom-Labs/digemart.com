@@ -2,13 +2,12 @@
 import { colors } from '@/styles/theme';
 import React from 'react';
 
+export function OpenAgentModal() {
+  let d = document.getElementById('agent_modal') as HTMLDialogElement;
+
+  d.showModal();
+}
 function CallToAction() {
-  function OpenAgentModal() {
-    let d = document.getElementById('agent_modal') as HTMLDialogElement;
-
-    d.showModal();
-  }
-
   return (
     <div className='relative py-16'>
       <div
