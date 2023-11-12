@@ -68,10 +68,6 @@ html[data-theme='night'] input,
 html[data-theme='night'] select {
   color: aliceblue !important;
 }
-html[data-theme='night'] input:focus,
-html[data-theme='night'] select:focus {
-  color: black !important;
-}
 
 html[data-theme='light'] body {
   background-color: #f9fafb;

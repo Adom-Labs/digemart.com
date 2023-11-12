@@ -6,7 +6,7 @@ import { BsDot } from 'react-icons/bs';
 function OrderViewModal({ order }: { order: OrderType | null }) {
   return (
     <dialog id='order-view-modal' className='modal modal-bottom '>
-      <div className='modal-box min-h-[60vh] md:w-[80%]'>
+      <div className='modal-box min-h-[60vh] mx-auto md:w-[80%]'>
         <form method='dialog'>
           <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>
             ✕
