@@ -7,7 +7,7 @@ function DashboardLayout({ children }: PropsWithChildren) {
       <div className='flex h-[91vh]'>
         <DashSidebar />
         <div className='overflow-y-auto w-full no-scrollbar'>
-          <div className='pt-8 pb-4 '>{children}</div>
+          <div className='py-8 '>{children}</div>
         </div>
       </div>
     </div>
