@@ -20,7 +20,7 @@ function ShopNav() {
     'shop-footer-box flex items-center  justify-center py-3 flex flex-col items-center gap-1';
 
   return (
-    <div className='sticky bottom-0 z-20 bg-white shadow-lg md:hidden'>
+    <div className='fixed w-full bottom-0 z-20 bg-white dark:bg-slate-800 shadow-lg md:hidden'>
       <div className='grid grid-cols-4 items-center  shadow-2xl '>
         <Link
           href={shopUrl + '/'}

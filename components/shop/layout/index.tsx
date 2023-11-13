@@ -9,7 +9,7 @@ function VendorShopLayout({ children }: { children: ReactNode }) {
     <ShopProvider>
       <CartProvider>
         <ShopNav />
-        <div>{children}</div>
+        <div className='pb-[45px]'>{children}</div>
         <ShopFooter />
       </CartProvider>
     </ShopProvider>
