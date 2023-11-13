@@ -5,14 +5,14 @@ function ImagesViewGrid({ images, name }: { images: any[]; name: string }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   return (
-    <div>
-      <div className='h-[280px] bg-gray-50 w-full'>
+    <div className='h-[88%]'>
+      <div className='h-full dark:bg-slate-800 bg-gray-100w-full rounded-xl'>
         <div className='relative h-full'>
           <Image
             src={images && images[activeImageIndex]?.image}
             alt={name}
             fill
-            className='object-cover'
+            className='object-cover rounded-xl'
           />
         </div>
       </div>
@@ -23,7 +23,7 @@ function ImagesViewGrid({ images, name }: { images: any[]; name: string }) {
               <div
                 onClick={() => setActiveImageIndex(indx)}
                 key={indx + 'ii'}
-                className='w-[50px] h-[50px] relative border hover:border-green.500'
+                className='w-[50px] h-[50px] rounded-xl relative border hover:border-green.500'
                 style={{
                   borderColor: indx === activeImageIndex ? 'green' : 'gray',
                 }}
@@ -32,7 +32,7 @@ function ImagesViewGrid({ images, name }: { images: any[]; name: string }) {
                   src={image.image}
                   alt={'secondary image for ' + name}
                   fill
-                  className='object-cover'
+                  className='object-cover rounded-xl'
                 />
               </div>
             );

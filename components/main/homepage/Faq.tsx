@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import faqData from './faqData';
+import Link from 'next/link';
 
 function Faq() {
   return (
@@ -13,6 +14,7 @@ function Faq() {
           <p className='mt-3 text-lg text-neutral-500 md:text-xl'>
             Frequenty asked questions
           </p>
+          <Link href='/testdtoreui'>VIEW TEST STORE HERE</Link>
         </div>
         <div className='mx-auto mt-8 grid max-w-xl divide-y divide-neutral-200'>
           {faqData.map((faq) => {

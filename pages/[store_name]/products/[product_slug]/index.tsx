@@ -43,7 +43,7 @@ function SingleProduct() {
         <WrapContent>
           <div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-              <div className='dark:bg-slate-800 bg-gray-100 p-1  rounded-xl '>
+              <div className=' p-1  rounded-xl  min-h-[350px] '>
                 <ImagesViewGrid name='name' images={sampleImages} />
               </div>
               <div className=''>

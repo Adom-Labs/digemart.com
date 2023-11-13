@@ -16,7 +16,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 
   function toggleTheme() {
     let current = document.documentElement.getAttribute('data-theme');
-    let newTheme: string = '';
+    let newTheme: string = 'light';
 
     if (current === 'night') {
       newTheme = 'light';
@@ -27,7 +27,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     }
 
     if (!current || current === 'undefined') {
-      newTheme = 'night';
+      newTheme = 'light';
     }
 
     document.documentElement.setAttribute('data-theme', newTheme);
