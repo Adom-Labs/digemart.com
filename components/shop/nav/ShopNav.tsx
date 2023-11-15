@@ -3,17 +3,14 @@ import ShopLogo from '../ShopLogo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { linkStyle } from '@/styles/theme';
-import { FaCartPlus } from 'react-icons/fa';
-
 import { BiUserCircle } from 'react-icons/bi';
 import useShop from '@/providers/ShopProvider';
-import useCart from '@/providers/CartContext';
 import WrapContent from '@/components/shared/WrapContent';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
+import CartButton from '../cart/CartButton';
 
 function ShopNav() {
   const { asPath } = useRouter();
-  const { products } = useCart();
   const { shopUrl } = useShop();
   return (
     <div className='sticky top-0 z-20 bg-white dark:bg-slate-800'>
@@ -39,16 +36,7 @@ function ShopNav() {
 
             {/* cart button */}
             <div>
-              <Link href={shopUrl + '/cart'} title='cart'>
-                <button className='btn-outline btn-sm btn h-fit rounded-full border-purple-500 pr-0 hover:bg-purple-800'>
-                  {products.length}
-                  <div className='rounded-full bg-purple-800'>
-                    <div className=' p-2 text-white'>
-                      <FaCartPlus />
-                    </div>
-                  </div>
-                </button>
-              </Link>
+              <CartButton />
             </div>
             <ThemeToggle />
           </div>

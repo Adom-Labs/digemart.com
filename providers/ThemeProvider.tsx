@@ -27,7 +27,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     }
 
     if (!current || current === 'undefined') {
-      newTheme = 'light';
+      newTheme = 'night';
     }
 
     document.documentElement.setAttribute('data-theme', newTheme);
@@ -41,6 +41,9 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     if (t) {
       document.documentElement.setAttribute('data-theme', t);
       return setTheme(t);
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      return setTheme('light');
     }
   }, [theme]);
 
