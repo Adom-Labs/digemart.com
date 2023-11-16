@@ -8,10 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'brand-purple': 'var(--brand-purple)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      keyframes: {
+        slideIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        slideIn: 'slideIn .25s ease-in-out forwards var(--delay, 0)',
       },
     },
   },

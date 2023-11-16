@@ -3,10 +3,20 @@ import ShopNav from '../nav/ShopNav';
 import ShopFooter from '../nav/ShopFooter';
 import { ShopProvider } from '@/providers/ShopProvider';
 import { CartProvider } from '@/providers/CartContext';
+import Headers from '@/components/seo/Headers';
 
-function VendorShopLayout({ children }: { children: ReactNode }) {
+function VendorShopLayout({
+  children,
+  title,
+  desc,
+}: {
+  children: ReactNode;
+  title?: string;
+  desc?: string;
+}) {
   return (
     <ShopProvider>
+      <Headers desc={desc} title={title} />
       <CartProvider>
         <ShopNav />
         <div className='pb-[45px]'>{children}</div>

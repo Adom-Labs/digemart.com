@@ -15,6 +15,10 @@ type ShopDataType = {
   desc: string;
   logo: string;
   featured_categories: any[];
+  acceptedDeliveryMethods: {
+    pickup: { available: boolean; cost: number | string };
+    delivery: { available: boolean; cost: number | string };
+  };
 };
 
 const initialValues = {
@@ -44,6 +48,10 @@ const initialValues = {
       description: 'ties for official wears in all sizes',
     },
   ],
+  acceptedDeliveryMethods: {
+    pickup: { available: true, cost: 'free' },
+    delivery: { available: true, cost: 400 },
+  },
 };
 
 const ShopContext = createContext<

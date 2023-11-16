@@ -1,11 +1,14 @@
 import useCart from '@/providers/CartContext';
+import useShop from '@/providers/ShopProvider';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import { BsCart, BsList, BsListCheck } from 'react-icons/bs';
-import { FaCaretRight, FaCartPlus } from 'react-icons/fa';
+import { BsCart, BsListCheck } from 'react-icons/bs';
+import { FaCaretRight, FaCartPlus, FaMinus, FaPlus } from 'react-icons/fa';
 
 function CartButton() {
   const { products } = useCart();
+  const { shopUrl } = useShop();
 
   return (
     <div className='drawer drawer-end'>
@@ -47,9 +50,13 @@ function CartButton() {
                 <h4 className='font-semibold'>$490</h4>
               </div>
               <div className='flex justify-end mt-5 items-center'>
-                <button className='btn btn-sm btn-success'>
-                  Checkout <FaCaretRight />
-                </button>
+                <Link href={shopUrl + '/checkout'}>
+                  <span className='rounded-full bg-green-500 hover:bg-green-800 text-gray-100 btn btn-sm md:btn-md '>
+                    <span className='flex items-center'>
+                      Checkout <FaCaretRight />
+                    </span>
+                  </span>
+                </Link>
               </div>
             </div>
             <div className='divider'></div>
@@ -99,14 +106,18 @@ function CartItem() {
         <small className='poppins'>$70 per unit</small>
         <div className='flex justify-end'>
           <div className='flex items-center poppins'>
-            <span className='text-lg rounded-none rounded-l-full btn btn-sm md:btn-md '>
-              <span className='text-3xl px-2'>-</span>
+            <span className=' rounded-none rounded-l-full btn btn-sm md:btn-md '>
+              <span className=''>
+                <FaMinus />
+              </span>
             </span>
             <span className='text-lg rounded-none btn btn-sm md:btn-md pointer-events-none'>
               2
             </span>
-            <span className='text-lg rounded-none rounded-r-full btn btn-sm md:btn-md '>
-              <span className='text-lg px-2'>+</span>
+            <span className='rounded-none rounded-r-full btn btn-sm md:btn-md '>
+              <span className=''>
+                <FaPlus />
+              </span>
             </span>
           </div>
           <small className='mt-2 btn-ghost btn btn-sm poppins'>REMOVE</small>

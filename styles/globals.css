@@ -7,6 +7,7 @@
 * {
   scroll-behavior: smooth !important;
   --brand-purple: #a855f8;
+  --delay: 0.25s;
 }
 
 body,
@@ -88,13 +89,11 @@ button {
   border-radius: 9999px !important;
   padding-left: 40px;
   padding-right: 40px;
+  background-color: var(--brand-purple);
 }
 
 a:hover {
   text-decoration: none !important;
-  color: var(--brand-purple);
-}
-button:hover {
   color: var(--brand-purple);
 }
 
