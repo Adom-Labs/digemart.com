@@ -43,7 +43,7 @@ function ReviewCard() {
           </svg>
           <blockquote>
             <p className='text-2xl font-medium text-gray-900 dark:text-white'>
-              &quot;Flowbite is just awesome. It contains tons of predesigned
+              &quot;This is just awesome. It contains tons of predesigned
               components and pages starting from login screen to complex
               dashboard. Perfect choice for your next SaaS application.&quot;
             </p>

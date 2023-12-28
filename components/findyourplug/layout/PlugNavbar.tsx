@@ -7,13 +7,12 @@ import WrapContent from '@/components/shared/WrapContent';
 import AppLogo from '@/components/shared/AppLogo';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import { useTheme } from '@/providers/ThemeProvider';
-// import { OpenAgentModal } from '../homepage/CallToAction';
 import { FaPlug } from 'react-icons/fa';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import { RiMenu3Line } from 'react-icons/ri';
 
-function TopNav() {
+function PlugNavbar() {
   const { theme } = useTheme();
   return (
     <div className='sticky top-0 z-20 bg-white dark:bg-slate-800 dark:shadow-2xl '>
@@ -22,39 +21,26 @@ function TopNav() {
           <AppLogo logoType={theme === 'night' ? 'n' : 'd'} />
           <div className='flex items-center gap-3 md:gap-5 '>
             <Link
-              title='find people to buy things from'
-              href='/findyourplug'
+              title='back to digemart'
+              href='/'
               className={
                 linkStyle + 'hidden text-lg sm:flex items-center gap-1'
               }
             >
-              Find Your Plug
-              <FaPlug />
+              Home
             </Link>
-            {/* <Link
+            <Link
               title='find people to buy things from'
               href='#!'
               className={
                 linkStyle + 'hidden text-lg md:flex items-center gap-1'
               }
             >
-              Find Stores
-              <FaShoppingBag />
-            </Link> */}
-            {/* <div className='hidden md:block'>
-              <NavLink title='Start Selling' path='#sell' />
-            </div> */}
-            {/* <div onClick={OpenAgentModal} className='hidden md:block'>
-              <a
-                title='Become an Agent'
-                href='#!'
-                className={linkStyle + 'text-lg md:block'}
-              >
-                Become an Agent
-              </a>
-            </div> */}
+              Stores on Digemart
+            </Link>
+
             <div className='hidden md:flex items-center gap-1'>
-              <NavLink title='FAQ' path='#FAQ' />
+              <NavLink title='FAQ' path='#plugFAQ' />
               <FaRegQuestionCircle />
             </div>
 
@@ -77,13 +63,12 @@ function TopNav() {
                       <li>
                         <Link
                           title='find people to buy things from'
-                          href='/findyourplug'
+                          href='/'
                           className={
                             linkStyle + ' text-lg flex items-center gap-1'
                           }
                         >
-                          Find Your Plug
-                          <FaPlug />
+                          Home
                         </Link>
                       </li>
 
@@ -95,13 +80,13 @@ function TopNav() {
                             linkStyle + ' text-lg flex items-center gap-1'
                           }
                         >
-                          Find Stores
+                          Digemart Stores
                           <FaShoppingBag />
                         </Link>
                       </li>
                       <li>
                         <div className='flex items-center gap-1'>
-                          <NavLink title='FAQ' path='#FAQ' />
+                          <NavLink title='Plug FAQ' path='#plugFAQ' />
                           <FaRegQuestionCircle />
                         </div>
                       </li>
@@ -117,7 +102,7 @@ function TopNav() {
   );
 }
 
-export default TopNav;
+export default PlugNavbar;
 
 function NavLink({ path, title }: { path: string; title: string }) {
   return (
