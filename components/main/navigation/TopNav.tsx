@@ -2,12 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { linkStyle } from '@/styles/theme';
 import { BiUserCircle } from 'react-icons/bi';
-
 import WrapContent from '@/components/shared/WrapContent';
 import AppLogo from '@/components/shared/AppLogo';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import { useTheme } from '@/providers/ThemeProvider';
-// import { OpenAgentModal } from '../homepage/CallToAction';
 import { FaPlug } from 'react-icons/fa';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaRegQuestionCircle } from 'react-icons/fa';
@@ -20,39 +18,18 @@ function TopNav() {
       <WrapContent>
         <div className='flex items-center justify-between  py-3 shadow-sm '>
           <AppLogo logoType={theme === 'night' ? 'n' : 'd'} />
-          <div className='flex items-center gap-3 md:gap-5 '>
+          <div className='flex items-center gap-0 md:gap-5 '>
             <Link
               title='find people to buy things from'
               href='/findyourplug'
               className={
-                linkStyle + 'hidden text-lg sm:flex items-center gap-1'
+                linkStyle + 'hidden text-lg sm:flex items-center gap-1 mr-3'
               }
             >
               Find Your Plug
               <FaPlug />
             </Link>
-            {/* <Link
-              title='find people to buy things from'
-              href='#!'
-              className={
-                linkStyle + 'hidden text-lg md:flex items-center gap-1'
-              }
-            >
-              Find Stores
-              <FaShoppingBag />
-            </Link> */}
-            {/* <div className='hidden md:block'>
-              <NavLink title='Start Selling' path='#sell' />
-            </div> */}
-            {/* <div onClick={OpenAgentModal} className='hidden md:block'>
-              <a
-                title='Become an Agent'
-                href='#!'
-                className={linkStyle + 'text-lg md:block'}
-              >
-                Become an Agent
-              </a>
-            </div> */}
+
             <div className='hidden md:flex items-center gap-1'>
               <NavLink title='FAQ' path='#FAQ' />
               <FaRegQuestionCircle />
@@ -60,7 +37,7 @@ function TopNav() {
 
             <div title='profile'>
               <Link href={'/profile'} className='hover:text-purple-500'>
-                <BiUserCircle className='text-4xl' />
+                <BiUserCircle className='md:text-4xl text-3xl' />
               </Link>
             </div>
             <div title='toggle theme'>
@@ -70,8 +47,8 @@ function TopNav() {
               <div title='toggle menu'>
                 <div>
                   <details className='dropdown dropdown-end'>
-                    <summary className='m-1 btn btn-xs bg-transparent hover:bg-transparent outline-none border-0'>
-                      <RiMenu3Line className='text-3xl hover:text-purple-500 cursor-pointer ' />
+                    <summary className='m-1 btn btn-xs px-0 w-fit bg-transparent hover:bg-transparent outline-none border-0'>
+                      <RiMenu3Line className='md:text-3xl text-3xl hover:text-purple-500 cursor-pointer ' />
                     </summary>
                     <ul className='p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52'>
                       <li>

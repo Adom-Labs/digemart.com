@@ -263,3 +263,23 @@ input[type='radio']:checked.rating-star {
 .small-caps {
   font-variant: small-caps;
 }
+
+
+.no-outline-shadow-border:focus{
+outline: none;
+border: none;
+box-shadow: none;
+}
+
+#hero_search::placeholder{
+  font-size: 15px;
+}
+
+#plug-header{
+  background: #000000c7;
+  background-image: url('https://source.unsplash.com/random?restaurants,coffeeshop,clothes,cosmetics,accessories,devices,restaurant,boutique,');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
