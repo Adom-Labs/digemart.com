@@ -36,19 +36,18 @@ function CategorySlider() {
       Icon: PiBeerBottleFill,
     },
   ];
+  const sizes =
+    'min-w-[120px]  min-h-[120px]  max-w-[120px]  max-h-[120px]                 md:min-w-[160px]   md:min-h-[160px]  md:max-w-[160px] md:max-h-[160px] ';
   return (
-    <div className='bg-gray-100'>
+    <div className='bg-gray-100 dark:bg-transparent'>
       <WrapContent>
-        <div className='py-12 flex gap-10 overflow-x-scroll md:overflow-x-hidden md:flex-wrap '>
-          <div
-            className='rounded-full block bg-gray-50 shadow-base '
-            style={{ minWidth: '160px', minHeight: '160px' }}
-          >
+        <div className='py-12 flex gap-5 md:gap=8 overflow-x-scroll md:overflow-x-hidden md:flex-wrap '>
+          <div className={sizes + ' rounded-full block  shadow-base '}>
             <div className=' flex h-full flex-col items-center justify-center'>
-              <div className='text-lg relative text-right'>
+              <div className='text-md md:text-lg relative text-right'>
                 <BiCategory className='text-3xl ml-auto' />
-                <p className='poppins font-semibold'>Some</p>
-                <p className='poppins font-semibold'>categories</p>
+                <p className='poppins'>Some</p>
+                <p className='poppins'>categories</p>
                 {/* <p className='poppins font-semibold'>include : </p> */}
               </div>
             </div>
@@ -58,8 +57,10 @@ function CategorySlider() {
             return (
               <Link
                 href=''
-                className='rounded-full block bg-gray-50 shadow '
-                style={{ minWidth: '160px', minHeight: '160px' }}
+                className={
+                  sizes +
+                  ' rounded-full block bg-gray-50                  dark:bg-slate-800 shadow'
+                }
                 key={i + 'cat'}
               >
                 <div className=' flex h-full flex-col gap-3 items-center justify-center'>
@@ -73,8 +74,10 @@ function CategorySlider() {
           })}
 
           <div
-            className='rounded-full block bg-gray-50 shadow-sm '
-            style={{ minWidth: '160px', minHeight: '160px' }}
+            className={
+              sizes +
+              ' rounded-full block bg-gray-50 dark:bg-slate-800 shadow-sm cursor-pointer hover:text-violet-800'
+            }
           >
             <div className=' flex h-full flex-col gap-0 items-center justify-center'>
               <p className='raleway'>More</p>
