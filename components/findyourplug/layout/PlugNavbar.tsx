@@ -43,7 +43,10 @@ function PlugNavbar() {
             </div>
 
             <div title='profile'>
-              <Link href={'/profile'} className='hover:text-purple-500'>
+              <Link
+                href={'/findyourplug/profile'}
+                className='hover:text-purple-500'
+              >
                 <BiUserCircle className='md:text-4xl text-3xl' />
               </Link>
             </div>

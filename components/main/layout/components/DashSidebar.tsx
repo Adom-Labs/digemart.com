@@ -8,7 +8,7 @@ import { FiSettings } from 'react-icons/fi';
 import { AiOutlineTransaction } from 'react-icons/ai';
 import { MdOutlineRateReview } from 'react-icons/md';
 
-const linkStyle =
+export const linkStyle =
   'font-semibold text-lg flex flex-col items-center flex-center py-2 md:gap-2 ';
 const baseUrl = '/profile';
 
@@ -56,7 +56,7 @@ function DashSidebar() {
 
 export default DashSidebar;
 
-function DashLink({
+export function DashLink({
   path,
   title,
   children,
