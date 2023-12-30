@@ -65,18 +65,6 @@ function TopNav() {
                       </li>
 
                       <li>
-                        <Link
-                          title='find people to buy things from'
-                          href='#!'
-                          className={
-                            linkStyle + ' text-lg flex items-center gap-1'
-                          }
-                        >
-                          Find Stores
-                          <FaShoppingBag />
-                        </Link>
-                      </li>
-                      <li>
                         <div className='flex items-center gap-1'>
                           <NavLink title='FAQ' path='#FAQ' />
                           <FaRegQuestionCircle />

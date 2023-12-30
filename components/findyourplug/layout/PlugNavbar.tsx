@@ -6,7 +6,6 @@ import WrapContent from '@/components/shared/WrapContent';
 import AppLogo from '@/components/shared/AppLogo';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import { useTheme } from '@/providers/ThemeProvider';
-import { FaShoppingBag } from 'react-icons/fa';
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import { RiMenu3Line } from 'react-icons/ri';
 
@@ -22,19 +21,19 @@ function PlugNavbar() {
               title='back to digemart'
               href='/'
               className={
-                linkStyle + 'hidden text-lg sm:flex items-center gap-1 mr-3'
+                linkStyle + 'hidden text-lg md:flex items-center gap-1 mr-3'
               }
             >
               Home
             </Link>
             <Link
               title='find people to buy things from'
-              href='#!'
+              href='/createplug'
               className={
-                linkStyle + 'hidden text-lg md:flex items-center gap-1 mr-3'
+                linkStyle + 'hidden text-lg sm:flex items-center gap-1 mr-3'
               }
             >
-              Stores on Digemart
+              Add Your Business
             </Link>
 
             <div className='hidden md:flex items-center gap-1'>
@@ -66,7 +65,7 @@ function PlugNavbar() {
                           title='find people to buy things from'
                           href='/'
                           className={
-                            linkStyle + ' text-lg flex items-center gap-1'
+                            linkStyle + ' text-sm flex items-center gap-1'
                           }
                         >
                           Home
@@ -76,13 +75,12 @@ function PlugNavbar() {
                       <li>
                         <Link
                           title='find people to buy things from'
-                          href='#!'
+                          href='/createplug'
                           className={
-                            linkStyle + ' text-lg flex items-center gap-1'
+                            linkStyle + ' text-sm flex items-center gap-1'
                           }
                         >
-                          Digemart Stores
-                          <FaShoppingBag />
+                          Add your business
                         </Link>
                       </li>
                       <li>
@@ -107,7 +105,7 @@ export default PlugNavbar;
 
 function NavLink({ path, title }: { path: string; title: string }) {
   return (
-    <Link className={linkStyle + ' text-lg md:block'} href={path}>
+    <Link className={linkStyle + 'text-sm md:text-lg md:block'} href={path}>
       {title}
     </Link>
   );

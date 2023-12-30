@@ -27,18 +27,24 @@ function PlugHeader() {
                   type='text'
                   id='hero_search'
                   name='q'
-                  className='input  no-outline-shadow-border  input-lg w-full p-3 join-item rounded-l-full rounded-r-none border border-2 border-0 placeholder-current  bg-black/10 text-white '
+                  className='input  no-outline-shadow-border  input-lg w-full p-3 join-item rounded-l-full rounded-r-none border border-2 border-0 placeholder-gray-400  bg-black/10 text-white '
                   placeholder='what are you looking for?'
                 />
-                <select className='select hidden md:flex bg-black/20 text-white no-outline-shadow-border select-lg join-item'>
-                  <option disabled defaultValue='city'>
-                    city
-                  </option>
+
+                <input
+                  type='text'
+                  id='hero_search'
+                  name='location'
+                  className='input  no-outline-shadow-border  input-lg min-w-[100px] w-[30%] p-3 join-item rounded-l-full rounded-r-none border border-2 border-0 placeholder-gray-400  bg-black/10 text-white '
+                  placeholder='location'
+                  list='location_list'
+                />
+
+                <datalist id='location_list'>
                   <option className='text-black'>Uyo</option>
                   <option className='text-black'>PH</option>
                   <option className='text-black'>Lagos</option>
-                </select>
-
+                </datalist>
                 <span
                   title='search button'
                   className='btn no-outline-shadow-border  btn-lg capitalize inline-flex join-item items-center bg-violet-700  text-white text-lg font-semibold rounded-l-none rounded-r-full border-0 hover:bg-violet-900'

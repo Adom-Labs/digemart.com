@@ -7,7 +7,7 @@ import React from 'react';
 
 function PlugProfile() {
   return (
-    <PlugLayout>
+    <PlugLayout title='Business Profile | Digemart'>
       <DashboardLayout plug>
         <WrapContent>
           <SectionHeading>Manage your business Profile</SectionHeading>

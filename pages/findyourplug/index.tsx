@@ -7,7 +7,7 @@ import React from 'react';
 
 function FindYourPlug() {
   return (
-    <PlugLayout>
+    <PlugLayout title='Find your plug'>
       <PlugHeader />
       <SampleBusiness />
       <CategorySlider />

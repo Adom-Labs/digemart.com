@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import DashSidebar from './components/DashSidebar';
 import PlugSidebar from '@/components/findyourplug/layout/PlugSidebar';
+import Headers from '@/components/seo/Headers';
 
 function DashboardLayout({
   children,
