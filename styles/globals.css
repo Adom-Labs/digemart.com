@@ -112,6 +112,13 @@ input[type='radio']:checked.rating-star {
   );
 }
 
+.brand-bg {
+  background: var(--brand-purple);
+}
+.brand-bg-hover:hover {
+  background: #7606df;
+}
+
 /* The actual content */
 .content {
   padding: 20px 30px;

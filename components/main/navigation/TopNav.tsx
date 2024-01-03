@@ -10,6 +10,7 @@ import { FaPlug } from 'react-icons/fa';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import { RiMenu3Line } from 'react-icons/ri';
+import AccountButton from '@/components/auth/AccountButton';
 
 function TopNav() {
   const { theme } = useTheme();
@@ -30,16 +31,7 @@ function TopNav() {
               <FaPlug />
             </Link>
 
-            <div className='hidden md:flex items-center gap-1'>
-              <NavLink title='FAQ' path='#FAQ' />
-              <FaRegQuestionCircle />
-            </div>
-
-            <div title='profile'>
-              <Link href={'/profile'} className='hover:text-purple-500'>
-                <BiUserCircle className='md:text-4xl text-3xl' />
-              </Link>
-            </div>
+            <AccountButton />
             <div title='toggle theme'>
               <ThemeToggle />
             </div>
@@ -62,13 +54,6 @@ function TopNav() {
                           Find Your Plug
                           <FaPlug />
                         </Link>
-                      </li>
-
-                      <li>
-                        <div className='flex items-center gap-1'>
-                          <NavLink title='FAQ' path='#FAQ' />
-                          <FaRegQuestionCircle />
-                        </div>
                       </li>
                     </ul>
                   </details>

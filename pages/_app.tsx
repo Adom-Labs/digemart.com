@@ -1,5 +1,7 @@
 import { seo } from '@/helpers/text_display';
+import { AuthProvider } from '@/providers/AuthProvider';
 import ThemeProvider from '@/providers/ThemeProvider';
+import WagmiProvider from '@/providers/WagmiProvider';
 import '@/styles/globals.css';
 import type { NextPage } from 'next';
 import { DefaultSeo } from 'next-seo';
@@ -33,8 +35,12 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         }}
       />
       <ThemeProvider>
-        <Toaster position='bottom-right' />
-        <Layout />
+        <WagmiProvider>
+          <AuthProvider>
+            <Toaster position='bottom-right' />
+            <Layout />
+          </AuthProvider>
+        </WagmiProvider>
       </ThemeProvider>
     </>
   );
