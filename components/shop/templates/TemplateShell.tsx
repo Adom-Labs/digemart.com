@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import TemplateHeader from './TemplateHeader';
 
 // Example product card
 function Product({ product }: { product: any }) {
@@ -36,18 +37,12 @@ function TemplateShell({ data }: { data: any }) {
   return (
     <div>
       {/* Header */}
-      <header style={headerStyle}>
-        <h1 style={headingStyle}>{storeName}</h1>
-        <nav>
-          <ul>
-            {header.navigationLinks.map((link: any) => (
-              <li key={link.label} style={bodyStyle}>
-                <a href={link.url}>{link.label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      <TemplateHeader
+        {...headerStyle}
+        navigationLinks={[]}
+        storeName={storeName}
+        textColor=''
+      />
 
       {/* Products */}
       <section>
