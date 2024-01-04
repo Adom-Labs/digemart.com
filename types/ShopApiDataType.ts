@@ -44,6 +44,10 @@ type ShopApiDataType = {
         heading: string
         body: string
     };
+    acceptedDeliveryMethods: {
+        pickup: { available: boolean, cost: string | number }
+        delivery: { available: boolean, cost: string | number }
+    }
 }
 
 

@@ -33,6 +33,10 @@ const initialValues: ShopApiDataType = {
     heading: '',
     body: '',
   },
+  acceptedDeliveryMethods: {
+    pickup: { available: false, cost: '0' },
+    delivery: { available: false, cost: '0' },
+  },
 };
 
 //example data from api
@@ -80,6 +84,10 @@ const exampleApiData: ShopApiDataType = {
   fonts: {
     heading: 'Raleway, sans-serif',
     body: 'Nunito, sans-serif',
+  },
+  acceptedDeliveryMethods: {
+    pickup: { available: true, cost: 'free' },
+    delivery: { available: true, cost: 400 },
   },
 };
 

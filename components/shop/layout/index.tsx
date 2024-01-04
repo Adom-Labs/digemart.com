@@ -18,7 +18,6 @@ function VendorShopLayout({
     <ShopProvider>
       <Headers desc={desc} title={title} />
       <CartProvider>
-        <ShopNav />
         <div className='pb-[45px]'>{children}</div>
         <ShopFooter />
       </CartProvider>
