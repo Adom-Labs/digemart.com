@@ -35,7 +35,7 @@ export function ToggleBtn({
 }) {
   return (
     <button
-      className='btm-sm btn-ghost dark:text-gray-50 btn-square btn-circle btn text-xl'
+      className='btm-sm btn-ghost brand-text-hover hover:bg-transparent px-0 dark:text-gray-50   btn text-2xl'
       onClick={handler}
     >
       {children}

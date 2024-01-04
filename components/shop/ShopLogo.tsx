@@ -21,7 +21,7 @@ const ShopLogo = ({ url = 'n', ...rest }: LogoType) => {
         alt='logo'
         src={logo ?? defaultLogoSrc}
         width='110'
-        height='100'
+        height='50'
         style={{ objectFit: 'contain' }}
         {...rest}
       />

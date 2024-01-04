@@ -2,22 +2,27 @@ import React from 'react';
 import ShopLogo from '../ShopLogo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { linkStyle } from '@/styles/theme';
 import { BiUserCircle } from 'react-icons/bi';
 import useShop from '@/providers/ShopProvider';
 import WrapContent from '@/components/shared/WrapContent';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import CartButton from '../cart/CartButton';
+import MobileDropdown from './MobileDropdown';
+import NavLink from './NavLink';
 
-function ShopNav() {
+function ShopNav({
+  toggle,
+}: {
+  toggle: (toSet?: boolean | undefined) => void;
+}) {
   const { asPath } = useRouter();
-  const { shopUrl } = useShop();
+  const { shopUrl, logo, mobileNavType } = useShop();
   return (
-    <div className='sticky top-0 z-20 bg-white dark:bg-slate-800'>
+    <div className='sticky max-h-[65px] top-0 z-20 bg-white dark:bg-slate-800'>
       <WrapContent>
-        <div className='flex items-center justify-between  py-3 shadow-sm '>
-          <ShopLogo />
-          <div className='flex items-center gap-5 '>
+        <div className='flex items-center justify-between   py-2 shadow-sm '>
+          <ShopLogo url={logo} />
+          <div className='flex items-center gap-3  '>
             <div className='hidden md:block'>
               <NavLink title='Products' asPath={asPath} path='/products' />
             </div>
@@ -36,9 +41,10 @@ function ShopNav() {
 
             {/* cart button */}
             <div>
-              <CartButton />
+              <CartButton toggle={toggle} />
             </div>
             <ThemeToggle />
+            {mobileNavType === 'dropdown' && <MobileDropdown asPath={asPath} />}
           </div>
         </div>
       </WrapContent>
@@ -47,22 +53,3 @@ function ShopNav() {
 }
 
 export default ShopNav;
-
-function NavLink({
-  path,
-  asPath,
-  title,
-}: {
-  path: string;
-  asPath: string;
-  title: string;
-}) {
-  return (
-    <Link
-      className={linkStyle + ' text-lg md:block'}
-      href={'/' + asPath.split('/')[1] + path}
-    >
-      {title}
-    </Link>
-  );
-}

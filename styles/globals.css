@@ -20,7 +20,7 @@ i,
 li {
   font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    sans-serif !important;
+    sans-serif ;
 }
 
 h1,
@@ -34,7 +34,7 @@ a,
 b {
   font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    sans-serif !important;
+    sans-serif ;
 }
 
 .raleway {
@@ -117,6 +117,9 @@ input[type='radio']:checked.rating-star {
 }
 .brand-bg-hover:hover {
   background: #7606df;
+}
+.brand-text-hover:hover {
+  color: #7606df;
 }
 
 /* The actual content */
