@@ -5,7 +5,7 @@ import React from 'react';
 function StorePage() {
   return (
     <ShopTemplateLayout>
-      <HomepageTemplate />;
+      <HomepageTemplate />
     </ShopTemplateLayout>
   );
 }

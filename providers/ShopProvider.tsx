@@ -11,12 +11,12 @@ import generateTestProducts from './generateTestData';
 import ShopApiDataType from '@/types/ShopApiDataType';
 
 const initialValues: ShopApiDataType = {
-  storeName: '',
+  storeName: 'loading',
   storeDesc: '',
   logo: '',
   mobileNavType: 'loading',
 
-  products: [{ id: '', name: '', price: 0, imageUrl: '' }],
+  products: [],
   header: {
     backgroundColor: '',
     lineOne: '',
@@ -64,18 +64,14 @@ const exampleApiData: ShopApiDataType = {
     },
   ],
 
-  products: [
-    { id: 1, name: 'Product 1', price: 20.99, imageUrl: 'product1.jpg' },
-    { id: 2, name: 'Product 2', price: 34.99, imageUrl: 'product2.jpg' },
-    // ... more product data
-  ],
+  products: [],
   header: {
     backgroundColor: '#3498db',
     lineOne: 'Welcome to',
     lineTwo: 'Beauty Shop Lorem',
     textColor: '#3498db',
     smallText: 'small description text',
-    arrangement: 'text_left_image_right',
+    arrangement: 'stacked_no_image',
     image:
       'https://source.unsplash.com/random?restaurants,barber-shop,coffee-shop,restaurant,boutique,',
   },
@@ -87,56 +83,34 @@ const exampleApiData: ShopApiDataType = {
   },
 };
 
-// const initialValues = {
-//   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsScmzZ7JYuGBtaHkHS4gbYHLHQd7jly-5oA&usqp=CAU',
-//   desc: "We sell fashion for every style and budget. Whether you're looking for a new outfit for a special occasion or just want to update your everyday wardrobe, we have something for you",
-//   state: 'Port Harcourt',
-//   shop_name: 'Lorem ipsum test name here',
-
-//   acceptedDeliveryMethods: {
-//     pickup: { available: true, cost: 'free' },
-//     delivery: { available: true, cost: 400 },
-//   },
-// };
-
-const ShopContext = createContext<
-  ShopApiDataType & { shopUrl: string; deals: any[] }
->({
+const ShopContext = createContext<ShopApiDataType & { shopUrl: string }>({
   shopUrl: '',
-  deals: [],
   ...initialValues,
 });
 
 export const ShopProvider = ({ children }: { children: React.ReactNode }) => {
   const { asPath } = useRouter();
-
   const shopUrl = '/' + asPath.split('/')[1];
 
   const [shopData, setShopData] = useState<ShopApiDataType>({
     ...initialValues,
   });
-  const [deals, setDeals] = useState<ProductType[]>([]);
 
   const getShopData = useCallback(() => {
     setTimeout(() => {
-      setShopData(exampleApiData);
-    }, 2000);
-  }, []);
+      const testproducts = generateTestProducts();
 
-  const setTestDeals = useCallback(() => {
-    const testdeals = generateTestProducts();
-    setDeals(testdeals);
+      setShopData({ ...exampleApiData, products: testproducts });
+    }, 3000);
   }, []);
 
   useEffect(() => {
     getShopData();
-    setTestDeals();
-  }, [getShopData, setTestDeals]);
+  }, [getShopData]);
 
   const value = {
     ...shopData,
     shopUrl,
-    deals,
   };
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };

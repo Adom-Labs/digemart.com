@@ -18,10 +18,16 @@ type ShopApiDataType = {
     }[],
 
     products: {
-        id: string | number;
-        name: string;
-        price: number;
-        imageUrl: string;
+        id: string;
+        product_name: string;
+        price: number | string;
+        currency: string;
+        image: string;
+        short_description: string;
+        rating: {
+            rating: number;
+            count: number;
+        };
     }[];
     header: {
         backgroundColor: string;

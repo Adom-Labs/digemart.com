@@ -9,6 +9,7 @@ import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import CartButton from '../cart/CartButton';
 import MobileDropdown from './MobileDropdown';
 import NavLink from './NavLink';
+import Skeleton from '@/components/shared/Skeleton';
 
 function ShopNav({
   toggle,
@@ -16,12 +17,16 @@ function ShopNav({
   toggle: (toSet?: boolean | undefined) => void;
 }) {
   const { asPath } = useRouter();
-  const { shopUrl, logo, mobileNavType } = useShop();
+  const { shopUrl, logo, mobileNavType, storeName } = useShop();
   return (
     <div className='sticky max-h-[65px] top-0 z-20 bg-white dark:bg-slate-800'>
       <WrapContent>
         <div className='flex items-center justify-between   py-2 shadow-sm '>
-          <ShopLogo url={logo} />
+          {storeName === 'loading' ? (
+            <Skeleton h='35px' w='80px' />
+          ) : (
+            <ShopLogo url={logo} />
+          )}
           <div className='flex items-center gap-3  '>
             <div className='hidden md:block'>
               <NavLink title='Products' asPath={asPath} path='/products' />
