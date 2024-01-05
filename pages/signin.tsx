@@ -2,10 +2,22 @@ import ConnectButton from '@/components/auth/ConnectButton';
 import AppLogo from '@/components/shared/AppLogo';
 import { useTheme } from '@/providers/ThemeProvider';
 import Link from 'next/link';
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 function Signin() {
   const { theme } = useTheme();
+  const [data, setData] = useState<{ email: string; password: string }>({
+    email: '',
+    password: '',
+  });
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    let v = e.target.value;
+    setData((prev) => {
+      return { ...prev, [e.target.name]: v };
+    });
+  };
+
+  //todo: write submit function
 
   return (
     <div className='min-h-screen flex justify-center'>
@@ -33,11 +45,17 @@ function Signin() {
                 <input
                   className='input w-full px-8 py-4 rounded-full font-medium border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400'
                   type='email'
+                  name='email'
+                  value={data.email}
+                  onChange={handleChange}
                   placeholder='Email'
                 />
                 <input
                   className='input w-full px-8 py-4 rounded-full font-medium border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 mt-5'
                   type='password'
+                  name='password'
+                  value={data.password}
+                  onChange={handleChange}
                   placeholder='Password'
                 />
                 <button className='mt-5 tracking-wide font-semibold brand-bg brand-bg-hover text-gray-100 w-full py-4 rounded-lg  transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'>
@@ -45,9 +63,9 @@ function Signin() {
                     className='w-6 h-6 -ml-2'
                     fill='none'
                     stroke='currentColor'
-                    stroke-width='2'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   >
                     <path d='M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2' />
                     <circle cx='8.5' cy='7' r='4' />
