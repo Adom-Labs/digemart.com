@@ -1,4 +1,4 @@
-type HeaderArrangeMent =
+export type HeaderArrangeMent =
     'stacked_no_image' |
     'text_left_image_right' |
     'stacked_image' |

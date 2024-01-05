@@ -3,6 +3,8 @@ import ShopProduct from '../product/ShopProduct';
 import WrapContent from '@/components/shared/WrapContent';
 import SectionHeading from '@/components/shared/SectionHeading';
 import useShop from '@/providers/ShopProvider';
+import AlertWithIcon from '@/components/alerts/AlertWithIcon';
+import { MdOutlineHourglassEmpty } from 'react-icons/md';
 
 function ProductListTemplate() {
   const { products } = useShop();
@@ -15,6 +17,9 @@ function ProductListTemplate() {
             <ShopProduct key={product.id} product={product} />
           ))}
         </div>
+        <AlertWithIcon Icon={MdOutlineHourglassEmpty}>
+          No products found.
+        </AlertWithIcon>
       </WrapContent>
     </div>
   );

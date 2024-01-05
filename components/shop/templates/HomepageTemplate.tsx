@@ -23,7 +23,7 @@ function HomepageTemplate() {
             <Skeleton h='5px' w='60%' />
           </div>
 
-          <Skeleton h='100px' w='100%' />
+          <Skeleton h='200px' w='100%' />
         </div>
       ) : (
         <TemplateHeader />

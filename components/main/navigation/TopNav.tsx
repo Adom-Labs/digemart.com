@@ -7,8 +7,6 @@ import AppLogo from '@/components/shared/AppLogo';
 import ThemeToggle from '@/components/shared/theme/ThemeToggle';
 import { useTheme } from '@/providers/ThemeProvider';
 import { FaPlug } from 'react-icons/fa';
-import { FaShoppingBag } from 'react-icons/fa';
-import { FaRegQuestionCircle } from 'react-icons/fa';
 import { RiMenu3Line } from 'react-icons/ri';
 import AccountButton from '@/components/auth/AccountButton';
 
@@ -19,7 +17,7 @@ function TopNav() {
       <WrapContent>
         <div className='flex items-center justify-between  py-3 shadow-sm '>
           <AppLogo logoType={theme === 'night' ? 'n' : 'd'} />
-          <div className='flex items-center gap-0 md:gap-5 '>
+          <div className='flex items-center gap-3 md:gap-5 '>
             <Link
               title='find people to buy things from'
               href='/findyourplug'

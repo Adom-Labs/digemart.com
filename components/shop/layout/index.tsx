@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import ShopFooter from '../nav/ShopFooter';
+import ShopFooter from '../nav/BottomBar';
 import { ShopProvider } from '@/providers/ShopProvider';
 import { CartProvider } from '@/providers/CartContext';
 import Headers from '@/components/seo/Headers';

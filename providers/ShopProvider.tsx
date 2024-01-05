@@ -75,7 +75,7 @@ const exampleApiData: ShopApiDataType = {
     lineTwo: 'Beauty Shop Lorem',
     textColor: '#3498db',
     smallText: 'small description text',
-    arrangement: 'stacked_no_image',
+    arrangement: 'stacked_image',
     image:
       'https://source.unsplash.com/random?restaurants,barber-shop,coffee-shop,restaurant,boutique,',
   },
@@ -107,6 +107,7 @@ export const ShopProvider = ({ children }: { children: React.ReactNode }) => {
   const getShopData = useCallback(() => {
     setTimeout(() => {
       const testproducts = generateTestProducts();
+      // const testproducts: any = [];
 
       setShopData({ ...exampleApiData, products: testproducts });
     }, 3000);

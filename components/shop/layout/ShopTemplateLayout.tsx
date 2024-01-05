@@ -5,6 +5,7 @@ import ShopNav from '../nav/ShopNav';
 import ShopFooter from '../nav/ShopFooter';
 import CartDrawer from '../cart/CartDrawer';
 import { useDisclosure } from 'react-use-disclosure';
+import BottomBar from '../nav/BottomBar';
 
 function ShopTemplateLayout({ children }: PropsWithChildren) {
   const { toggle, isOpen } = useDisclosure();
@@ -12,10 +13,13 @@ function ShopTemplateLayout({ children }: PropsWithChildren) {
   return (
     <ShopProvider>
       <CartProvider>
-        <ShopNav toggle={toggle} />
-        <div className='pb-[45px]'>{children}</div>
-        <ShopFooter />
-        <CartDrawer isOpen={isOpen} toggle={toggle} />
+        <main>
+          <ShopNav toggle={toggle} />
+          <div className='pb-[45px]'>{children}</div>
+          <BottomBar />
+          <ShopFooter />
+          <CartDrawer isOpen={isOpen} toggle={toggle} />
+        </main>
       </CartProvider>
     </ShopProvider>
   );
